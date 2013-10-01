@@ -1,0 +1,130 @@
+#1#
+select *
+{
+?drug a <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/drugs> .
+?drug <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/activeingredient> ?active .
+}
+
+
+#2#
+select *
+{
+?organization a <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/organization> .
+?organization <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/producesdrug> ?drug .
+}
+
+
+#3#
+select *
+{
+<http://www4.wiwiss.fu-berlin.de/dailymed/resource/drugs/1008> ?p ?o .
+}
+
+
+#4#
+select *
+{
+?drug ?p <http://www4.wiwiss.fu-berlin.de/dailymed/resource/ingredient/phenytoin_sodium>
+}
+
+
+#5#
+select * 
+{	
+?thing <http://www.w3.org/2000/01/rdf-schema#label> ?label
+}
+
+
+#6#
+select * 
+{	
+?drug a <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/drugs> .
+?drug <http://www.w3.org/2000/01/rdf-schema#label> ?label .
+}
+
+
+#7#
+select * 
+{	
+?org a <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/organization> .
+?org <http://www.w3.org/2000/01/rdf-schema#label> ?label .
+}
+
+
+#8#
+select * 
+{
+?drug a <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/drugs> .	
+?drug <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/routeofadministration> <http://www4.wiwiss.fu-berlin.de/dailymed/resource/routeofadministration/intramuscular> .
+?drug <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/representedorganization> <http://www4.wiwiss.fu-berlin.de/dailymed/resource/organization/hospira%2c_inc.> .
+}
+
+
+#9#
+select * 
+{	
+?drug a <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/drugs> .
+?drug <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/routeofadministration> <http://www4.wiwiss.fu-berlin.de/dailymed/resource/routeofadministration/intramuscular> .
+?drug <http://www.w3.org/2000/01/rdf-schema#label> ?label .
+}
+
+
+#10#
+select * 
+{	
+?drug a <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/drugs> .
+?drug <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/possiblediseasetarget> <http://www4.wiwiss.fu-berlin.de/diseasome/resource/diseases/1883> .
+?drug <http://www.w3.org/2000/01/rdf-schema#label> ?label .
+}
+
+
+#11#
+select *
+{
+?drug a <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/drugs> .
+?drug <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/activeingredient> ?active .
+?active <http://www.w3.org/2000/01/rdf-schema#label> ?label .
+}
+
+
+#12#
+select *
+{
+?drug a <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/drugs> .
+?drug <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/representedorganization> ?org .
+?org <http://www.w3.org/2000/01/rdf-schema#label> ?label .
+}
+
+
+#13#
+select *
+{
+<http://www4.wiwiss.fu-berlin.de/dailymed/resource/drugs/1905> <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/representedorganization> ?org .
+?org <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/producesdrug> ?otherdrug .
+}
+
+
+#14#
+select *
+{
+<http://www4.wiwiss.fu-berlin.de/dailymed/resource/drugs/3369> <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/representedorganization> ?org .
+?org <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/producesdrug> ?otherdrug .
+}
+
+
+#15#
+select ?drugname ?orgname
+{
+?drug <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/representedorganization> ?org .
+?drug <http://www.w3.org/2000/01/rdf-schema#label> ?drugname .
+?org <http://www.w3.org/2000/01/rdf-schema#label> ?orgname .
+}
+
+
+#16#
+select ?drugname ?ingridient
+{
+?drug <http://www4.wiwiss.fu-berlin.de/dailymed/resource/dailymed/activeingredient> ?active .
+?drug <http://www.w3.org/2000/01/rdf-schema#label> ?drugname .
+?active <http://www.w3.org/2000/01/rdf-schema#label> ?ingridient .
+}
